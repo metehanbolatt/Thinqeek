@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "356531493501",
+    "project_id": "thinqeek-28f51",
+    "storage_bucket": "thinqeek-28f51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356531493501:android:9191af09dcc7e79cc7ef14",
+        "android_client_info": {
+          "package_name": "com.metehanbolat.thinqeek"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356531493501-52gp0d965pkj7f04166dns0s5csc1tug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.metehanbolat.thinqeek",
+            "certificate_hash": "6dc4007b210cde6dbef823a90dcd4fb9e5e04dc6"
+          }
+        },
+        {
+          "client_id": "356531493501-8rm1go1iu5afo8nlpjbmnh0ohqh3nq16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCETeap6nbp9eJMW0PQ245Wk8ClQ1bg7SI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356531493501-8rm1go1iu5afo8nlpjbmnh0ohqh3nq16.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
