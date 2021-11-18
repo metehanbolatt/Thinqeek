@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav_graph"
+    app:startDestination="@id/moviesFragment">
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.metehanbolat.thinqeek.view.fragments.MoviesFragment"
+        android:label="fragment_movies"
+        tools:layout="@layout/fragment_movies" >
+        <action
+            android:id="@+id/action_moviesFragment_to_detailsMovieFragment"
+            app:destination="@id/detailsMovieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsMovieFragment"
+        android:name="com.metehanbolat.thinqeek.view.fragments.DetailsMovieFragment"
+        android:label="fragment_details_movie"
+        tools:layout="@layout/fragment_details_movie" >
+        <action
+            android:id="@+id/action_detailsMovieFragment_to_bigMovieImageFragment"
+            app:destination="@id/bigMovieImageFragment" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="comment"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="downloadUrl"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="rate"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/bigMovieImageFragment"
+        android:name="com.metehanbolat.thinqeek.view.fragments.BigMovieImageFragment"
+        android:label="fragment_big_movie_image"
+        tools:layout="@layout/fragment_big_movie_image" >
+        <argument
+            android:name="downloadUrl"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/seriesFragment"
+        android:name="com.metehanbolat.thinqeek.view.fragments.SeriesFragment"
+        android:label="fragment_series"
+        tools:layout="@layout/fragment_series" />
+    <fragment
+        android:id="@+id/technologiesFragment"
+        android:name="com.metehanbolat.thinqeek.view.fragments.TechnologiesFragment"
+        android:label="fragment_technologies"
+        tools:layout="@layout/fragment_technologies" />
+</navigation>

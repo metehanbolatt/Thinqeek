@@ -1,14 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
+    app:layoutDescription="@xml/fragment_movies_scene"
     tools:context=".view.fragments.MoviesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/days"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/sortIcon"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="25dp"
+        android:elevation="2dp"
+        android:src="@drawable/ic_sort"
+        android:contentDescription="@string/sorting_icon"
+        app:layout_constraintBottom_toTopOf="@id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/yearRateLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:elevation="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/sortIcon"
+        app:layout_constraintEnd_toEndOf="@id/sortIcon"
+        app:layout_constraintTop_toTopOf="@id/sortIcon">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipYear"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="2dp"
+            android:checkable="true"
+            android:gravity="center"
+            android:text="@string/year"
+            android:textAlignment="center"
+            android:textColor="@color/chip_text_color"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:chipBackgroundColor="@color/chip_color"
+            app:chipIconSize="11dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipRate"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:checkable="true"
+            android:gravity="center"
+            android:text="@string/rate"
+            android:textAlignment="center"
+            android:textColor="@color/chip_text_color"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:chipBackgroundColor="@color/chip_color"
+            app:chipIconSize="11dp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="false"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appName" />
+
+    <ImageView
+        android:id="@+id/exitImage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_exit"
+        android:contentDescription="@string/exit_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

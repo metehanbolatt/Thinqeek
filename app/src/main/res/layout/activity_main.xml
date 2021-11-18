@@ -53,7 +53,7 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPagerImageSlider"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="380dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:paddingStart="50dp"
