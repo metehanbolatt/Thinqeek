@@ -5,14 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.CompositePageTransformer
-import androidx.viewpager2.widget.MarginPageTransformer
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
@@ -23,7 +19,6 @@ import com.metehanbolat.thinqeek.R
 import com.metehanbolat.thinqeek.databinding.ActivityMainBinding
 import com.metehanbolat.thinqeek.model.SliderItem
 import com.metehanbolat.thinqeek.viewmodel.MainActivityViewModel
-import kotlin.math.abs
 
 class MainActivity : AppCompatActivity() {
 
