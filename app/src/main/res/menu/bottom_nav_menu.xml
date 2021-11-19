@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/moviesFragment"
-        android:icon="@drawable/home_icon"
-        android:title="Film" />
+        android:icon="@drawable/movie_icon"
+        android:title="" />
 
     <item
         android:id="@+id/seriesFragment"
-        android:icon="@drawable/heart_icon"
-        android:title="Dizi" />
+        android:icon="@drawable/series_icon"
+        android:title="" />
 
     <item
-        android:id="@+id/technologiesFragment"
-        android:icon="@drawable/settings_icon"
-        android:title="Tech" />
+        android:id="@+id/newsFragment"
+        android:icon="@drawable/news_icon"
+        android:title="" />
 
 </menu>

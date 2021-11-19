@@ -5,19 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.metehanbolat.thinqeek.R
-import com.metehanbolat.thinqeek.databinding.FragmentTechnologiesBinding
+import com.metehanbolat.thinqeek.databinding.FragmentNewsBinding
 
-class TechnologiesFragment : Fragment() {
+class NewsFragment : Fragment() {
 
-    private var _binding : FragmentTechnologiesBinding? = null
+    private var _binding : FragmentNewsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentTechnologiesBinding.inflate(inflater, container, false)
+        _binding = FragmentNewsBinding.inflate(inflater, container, false)
         val view = binding.root
 
         return view

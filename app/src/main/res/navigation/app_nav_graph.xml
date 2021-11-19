@@ -55,8 +55,8 @@
         android:label="fragment_series"
         tools:layout="@layout/fragment_series" />
     <fragment
-        android:id="@+id/technologiesFragment"
-        android:name="com.metehanbolat.thinqeek.view.fragments.TechnologiesFragment"
-        android:label="fragment_technologies"
-        tools:layout="@layout/fragment_technologies" />
+        android:id="@+id/newsFragment"
+        android:name="com.metehanbolat.thinqeek.view.fragments.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
 </navigation>
