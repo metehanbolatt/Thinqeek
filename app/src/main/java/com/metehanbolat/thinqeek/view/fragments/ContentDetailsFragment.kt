@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.metehanbolat.thinqeek.R
 import com.metehanbolat.thinqeek.databinding.FragmentDetailsMovieBinding
 
-class DetailsMovieFragment : Fragment() {
+class ContentDetailsFragment : Fragment() {
 
     private var _binding : FragmentDetailsMovieBinding? = null
     private val binding get() = _binding!!

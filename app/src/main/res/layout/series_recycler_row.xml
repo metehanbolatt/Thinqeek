@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/movieRecyclerConstraint"
+    android:id="@+id/seriesRecyclerConstraint"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -8,10 +8,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/movieImage"
+        android:id="@+id/seriesImage"
         android:layout_width="150dp"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
+        android:background="@color/white"
         app:shapeAppearanceOverlay="@style/roundedImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,9 +21,36 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:background="@drawable/season_background"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        app:layout_constraintStart_toStartOf="@id/seriesImage"
+        app:layout_constraintEnd_toEndOf="@id/seriesImage"
+        app:layout_constraintBottom_toBottomOf="@id/seriesImage"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/seriesSeason"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:text="5 Sezon"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/star_background"
-        app:layout_constraintTop_toTopOf="@id/movieImage"
-        app:layout_constraintEnd_toEndOf="@id/movieImage"
+        app:layout_constraintTop_toTopOf="@id/seriesImage"
+        app:layout_constraintEnd_toEndOf="@id/seriesImage"
         android:layout_margin="5dp"
         android:orientation="horizontal">
 
@@ -38,7 +66,7 @@
             android:src="@drawable/ic_orange_star" />
 
         <TextView
-            android:id="@+id/movieRate"
+            android:id="@+id/seriesRate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
@@ -49,23 +77,23 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/movieName"
+        android:id="@+id/seriesName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="@id/movieImage"
-        app:layout_constraintEnd_toEndOf="@id/movieImage"
-        app:layout_constraintTop_toBottomOf="@id/movieImage"
+        app:layout_constraintStart_toStartOf="@id/seriesImage"
+        app:layout_constraintEnd_toEndOf="@id/seriesImage"
+        app:layout_constraintTop_toBottomOf="@id/seriesImage"
         android:textColor="@color/white" />
 
     <TextView
-        android:id="@+id/movieYear"
+        android:id="@+id/seriesYear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/movieName"
-        app:layout_constraintEnd_toEndOf="@id/movieName"
-        app:layout_constraintTop_toBottomOf="@id/movieName"
+        app:layout_constraintStart_toStartOf="@id/seriesName"
+        app:layout_constraintEnd_toEndOf="@id/seriesName"
+        app:layout_constraintTop_toBottomOf="@id/seriesName"
         android:layout_marginTop="4dp"
         android:textColor="#FF6D00" />
 

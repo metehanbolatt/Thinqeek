@@ -25,13 +25,16 @@ class MoviesRecyclerAdapter(var context: Context, var movieList: ArrayList<Movie
         holder.binding.movieRate.text = movieList[position].rate.toString()
         Picasso.get().load(movieList[position].downloadUrl).into(holder.binding.movieImage)
 
-        holder.binding.recyclerConstraint.setOnClickListener {
+        holder.binding.movieRecyclerConstraint.setOnClickListener {
             if (viewModel.isClickable.value == true){
                 val action = MoviesFragmentDirections.actionMoviesFragmentToDetailsMovieFragment(
-                    movieList[position].name,
-                    movieList[position].comment,
-                    movieList[position].downloadUrl,
-                    movieList[position].rate.toString()
+                    director = movieList[position].director,
+                    name = movieList[position].name,
+                    comment = movieList[position].comment,
+                    downloadUrl = movieList[position].downloadUrl,
+                    rate = movieList[position].rate.toString(),
+                    year = movieList[position].year.toString(),
+                    season = null
                 )
                 Navigation.findNavController(it).navigate(action)
             }
