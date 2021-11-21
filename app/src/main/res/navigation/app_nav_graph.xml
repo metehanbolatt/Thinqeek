@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/bigMovieFragment"
-        android:name="com.metehanbolat.thinqeek.view.fragments.BigMovieImageFragment"
+        android:name="com.metehanbolat.thinqeek.view.fragments.BigImageFragment"
         android:label="fragment_big_movie_image"
         tools:layout="@layout/fragment_big_image" >
         <argument

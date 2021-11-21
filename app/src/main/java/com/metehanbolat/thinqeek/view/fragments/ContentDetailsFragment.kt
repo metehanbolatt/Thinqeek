@@ -5,19 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.metehanbolat.thinqeek.R
-import com.metehanbolat.thinqeek.databinding.FragmentDetailsMovieBinding
+import com.metehanbolat.thinqeek.databinding.FragmentContentDetailsBinding
 
 class ContentDetailsFragment : Fragment() {
 
-    private var _binding : FragmentDetailsMovieBinding? = null
+    private var _binding : FragmentContentDetailsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDetailsMovieBinding.inflate(inflater, container, false)
+        _binding = FragmentContentDetailsBinding.inflate(inflater, container, false)
         val view = binding.root
 
         return view

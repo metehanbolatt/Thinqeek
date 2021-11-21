@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -27,16 +29,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var firestore : FirebaseFirestore
     private lateinit var googleSignInClient : GoogleSignInClient
     private lateinit var viewModel : MainActivityViewModel
-
-    companion object{
-        private const val RC_SIGN_IN = 120
-    }
+    private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
 
     override fun onStart() {
         super.onStart()
-
         viewModel.checkCurrentUser(auth, baseContext, this@MainActivity)
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +46,8 @@ class MainActivity : AppCompatActivity() {
         auth = Firebase.auth
         firestore = Firebase.firestore
         viewModel = MainActivityViewModel()
+
+        registerLauncher()
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -76,27 +75,7 @@ class MainActivity : AppCompatActivity() {
     private fun signIn() {
         viewModel.isLoading.value = true
         val signInIntent = googleSignInClient.signInIntent
-        startActivityForResult(signInIntent, RC_SIGN_IN)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == RC_SIGN_IN) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            val exception = task.exception
-            if (task.isSuccessful){
-                try {
-                    val account = task.getResult(ApiException::class.java)!!
-                    firebaseAuthWithGoogle(account.idToken!!)
-                } catch (e: ApiException) {
-                    viewModel.isLoading.value = false
-                }
-            }else{
-                Toast.makeText(baseContext, exception.toString(), Toast.LENGTH_SHORT).show()
-                viewModel.isLoading.value = false
-            }
-        }
+        activityResultLauncher.launch(signInIntent)
     }
 
     private fun firebaseAuthWithGoogle(idToken: String) {
@@ -108,6 +87,29 @@ class MainActivity : AppCompatActivity() {
                 finish()
             } else {
                 viewModel.isLoading.value = false
+            }
+        }
+    }
+
+    private fun registerLauncher(){
+        activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
+            if (result.resultCode == RESULT_OK){
+                val intentFromResult = result.data
+                if (intentFromResult != null){
+                    val task = GoogleSignIn.getSignedInAccountFromIntent(intentFromResult)
+                    val exception = task.exception
+                    if (task.isSuccessful){
+                        try {
+                            val account = task.getResult(ApiException::class.java)!!
+                            firebaseAuthWithGoogle(account.idToken!!)
+                        } catch (e: ApiException) {
+                            viewModel.isLoading.value = false
+                        }
+                    }else{
+                        Toast.makeText(baseContext, exception.toString(), Toast.LENGTH_SHORT).show()
+                        viewModel.isLoading.value = false
+                    }
+                }
             }
         }
     }

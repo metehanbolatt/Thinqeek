@@ -11,4 +11,6 @@
     <string name="exit_icon">Çıkış İkonu</string>
     <string name="year">Yıl</string>
     <string name="rate">Puan</string>
+    <string name="google_icon">Google Icon</string>
+    <string name="sign_in_with_google">Google ile Giriş Yap</string>
 </resources>

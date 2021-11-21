@@ -20,13 +20,14 @@ class SeriesFragmentViewModel : ViewModel() {
                         seriesList.clear()
                         for (series in seriesDoc){
                             val myMovie = Series(
-                                series["name"].toString(),
-                                series["year"].toString().toInt(),
-                                series["rate"].toString().toDouble(),
-                                series["season"].toString().toInt(),
-                                series["downloadUrl"].toString(),
-                                series["comment"].toString(),
-                                series["date"].toString()
+                                director = series["director"].toString(),
+                                name = series["name"].toString(),
+                                year = series["year"].toString().toInt(),
+                                rate = series["rate"].toString().toDouble(),
+                                season = series["season"].toString().toInt(),
+                                downloadUrl = series["downloadUrl"].toString(),
+                                comment = series["comment"].toString(),
+                                date = series["date"].toString()
                             )
                             seriesList.add(myMovie)
                         }

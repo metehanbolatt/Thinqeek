@@ -20,12 +20,13 @@ class MoviesFragmentViewModel : ViewModel() {
                         movieList.clear()
                         for (movie in movies){
                             val myMovie = Movies(
-                                movie["name"].toString(),
-                                movie["year"].toString().toInt(),
-                                movie["comment"].toString(),
-                                movie["rate"].toString().toDouble(),
-                                movie["downloadUrl"].toString(),
-                                movie["date"].toString()
+                                director = movie["director"].toString(),
+                                name = movie["name"].toString(),
+                                year = movie["year"].toString().toInt(),
+                                comment = movie["comment"].toString(),
+                                rate = movie["rate"].toString().toDouble(),
+                                downloadUrl = movie["downloadUrl"].toString(),
+                                date = movie["date"].toString()
                             )
                             movieList.add(myMovie)
                         }

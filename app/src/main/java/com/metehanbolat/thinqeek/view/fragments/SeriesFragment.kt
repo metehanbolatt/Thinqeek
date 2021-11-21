@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.metehanbolat.thinqeek.R
 import com.metehanbolat.thinqeek.databinding.FragmentSeriesBinding
 
 class SeriesFragment : Fragment() {
