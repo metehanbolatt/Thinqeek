@@ -8,19 +8,35 @@
     app:layoutDescription="@xml/fragment_movies_scene"
     tools:context=".view.fragments.MoviesFragment">
 
-    <TextView
-        android:id="@+id/appName"
+    <LinearLayout
+        android:id="@+id/appNameLinear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/days"
-        android:text="@string/app_name"
-        android:textColor="@color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/days"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/movie"
+            android:layout_marginStart="3dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/days"
+            android:textColor="#D50000" />
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/sortIcon"
@@ -90,7 +106,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appName" />
+        app:layout_constraintTop_toBottomOf="@id/appNameLinear" />
 
     <ImageView
         android:id="@+id/exitImage"

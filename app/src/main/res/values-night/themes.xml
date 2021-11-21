@@ -23,4 +23,10 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item>
     </style>
+
+    <style name="halfRightRoundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">8dp</item>
+        <item name="cornerSizeBottomRight">8dp</item>
+    </style>
 </resources>

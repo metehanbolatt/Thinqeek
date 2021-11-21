@@ -4,12 +4,310 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
     tools:context=".view.fragments.ContentDetailsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/appNameLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/days"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/movie"
+            android:layout_marginStart="3dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/days"
+            android:textColor="#D50000" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/contentLinear"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appNameLinear"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/contentImage"
+            android:layout_width="200dp"
+            android:layout_height="380dp"
+            android:src="@drawable/dune"
+            app:shapeAppearanceOverlay="@style/halfRightRoundedImageView"
+            android:scaleType="centerCrop"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:text="Film:"
+                    android:textStyle="bold"
+                    android:textColor="#FFD600" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:text="Dune: Çöl Gezegeni"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:text="Yönetmen:"
+                    android:textStyle="bold"
+                    android:textColor="#FFD600" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:text="Metehan Bolat"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:text="Yıldızlar:"
+                    android:textStyle="bold"
+                    android:textColor="#FFD600" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:text="Metehan Bolat \nKutay Çetinkurt \nEmre Kara"
+                    android:lineSpacingExtra="2dp"
+                    android:justificationMode="inter_word"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:text="Süre:"
+                    android:textStyle="bold"
+                    android:textColor="#FFD600" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:text="2 saat 41 dakika"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:text="Yıl:"
+                    android:textStyle="bold"
+                    android:textColor="#FFD600" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:text="2021"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:text="Özet:"
+                    android:textStyle="bold"
+                    android:textColor="#FFD600" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:lineSpacingExtra="2dp"
+                    android:justificationMode="inter_word"
+                    android:text="Fasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfeature adaptation of Frank Herbert's science fiction novel, about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy."
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/firstStar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/star"
+                    android:src="@drawable/ic_empty_orange_star" />
+
+                <ImageView
+                    android:id="@+id/secondStar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/star"
+                    android:src="@drawable/ic_empty_orange_star" />
+
+                <ImageView
+                    android:id="@+id/thirdStar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/star"
+                    android:src="@drawable/ic_empty_orange_star" />
+
+                <ImageView
+                    android:id="@+id/fourthStar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/star"
+                    android:src="@drawable/ic_empty_orange_star" />
+
+                <ImageView
+                    android:id="@+id/fifthStar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/star"
+                    android:src="@drawable/ic_empty_orange_star" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/authorContentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yazar Yorumu"
+        android:textStyle="bold"
+        android:textColor="#DD2C00"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contentLinear" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#474747"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toTopOf="@id/authorContentScroll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/authorContentTitle"
+        app:layout_constraintTop_toBottomOf="@id/authorContentTitle" />
+
+    <ScrollView
+        android:id="@+id/authorContentScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/authorContentTitle"
+        app:layout_constraintTop_toBottomOf="@id/authorContentTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/userCommentButton"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/detailsContentComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gotham_book"
+            android:textStyle="bold"
+            android:lineSpacingExtra="5dp"
+            android:justificationMode="inter_word"
+            android:text="@string/lorem_ipsum"
+            android:textColor="@color/white" />
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/userCommentButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/user_comment_button"
+        android:src="@drawable/user_comment_button_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
