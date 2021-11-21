@@ -44,7 +44,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sign_in_with_google"
+            android:text="Google ile Giriş Yap"
             android:textStyle="bold"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
