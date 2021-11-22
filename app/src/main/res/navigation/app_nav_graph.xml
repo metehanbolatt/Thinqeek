@@ -40,13 +40,38 @@
             app:nullable="true" />
         <argument
             android:name="year"
-            app:argType="string" />
+            app:argType="string"
+            app:nullable="true" />
         <argument
             android:name="season"
             app:argType="string"
             app:nullable="true" />
         <argument
             android:name="director"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="time"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="stars"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="author"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="subject"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="isMovie"
+            app:argType="boolean"
+            android:defaultValue="true" />
+        <argument
+            android:name="type"
             app:argType="string"
             app:nullable="true" />
     </fragment>

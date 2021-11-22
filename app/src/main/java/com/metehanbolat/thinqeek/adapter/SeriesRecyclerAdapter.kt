@@ -35,7 +35,13 @@ class SeriesRecyclerAdapter(var context : Context, var seriesList : ArrayList<Se
                     downloadUrl = seriesList[position].downloadUrl,
                     rate = seriesList[position].rate.toString(),
                     season = seriesList[position].season.toString(),
-                    year = seriesList[position].year.toString()
+                    year = seriesList[position].year.toString(),
+                    time = seriesList[position].time,
+                    stars = seriesList[position].stars,
+                    author = seriesList[position].author,
+                    subject = seriesList[position].subject,
+                    isMovie = false,
+                    type = seriesList[position].type
                 )
                 Navigation.findNavController(it).navigate(action)
             }

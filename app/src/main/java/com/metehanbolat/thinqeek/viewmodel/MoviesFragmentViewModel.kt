@@ -26,7 +26,12 @@ class MoviesFragmentViewModel : ViewModel() {
                                 comment = movie["comment"].toString(),
                                 rate = movie["rate"].toString().toDouble(),
                                 downloadUrl = movie["downloadUrl"].toString(),
-                                date = movie["date"].toString()
+                                date = movie["date"].toString(),
+                                subject = movie["subject"].toString(),
+                                type = movie["type"].toString(),
+                                stars = movie["stars"].toString(),
+                                time = movie["time"].toString(),
+                                author = movie["author"].toString()
                             )
                             movieList.add(myMovie)
                         }

@@ -6,7 +6,12 @@ data class Series(
     var year: Int,
     var rate: Double,
     var season: Int,
+    var time: String,
+    var stars: String,
+    var subject: String,
+    var type: String,
     var downloadUrl: String,
     var comment: String,
-    var date: String
+    var date: String,
+    var author: String
 )

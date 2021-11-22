@@ -28,13 +28,19 @@ class MoviesRecyclerAdapter(var context: Context, var movieList: ArrayList<Movie
         holder.binding.movieRecyclerConstraint.setOnClickListener {
             if (viewModel.isClickable.value == true){
                 val action = MoviesFragmentDirections.actionMoviesFragmentToDetailsMovieFragment(
+                    isMovie = true,
                     director = movieList[position].director,
                     name = movieList[position].name,
                     comment = movieList[position].comment,
                     downloadUrl = movieList[position].downloadUrl,
                     rate = movieList[position].rate.toString(),
                     year = movieList[position].year.toString(),
-                    season = null
+                    season = null,
+                    time = movieList[position].time,
+                    stars = movieList[position].stars,
+                    author = movieList[position].author,
+                    subject = movieList[position].subject,
+                    type = movieList[position].type
                 )
                 Navigation.findNavController(it).navigate(action)
             }

@@ -26,4 +26,14 @@
         Integer sit amet volutpat lacus. Maecenas quis finibus ex, et viverra diam.</string>
     <string name="user_comment_button">Kullanıcı Yorumu Butonu</string>
     <string name="movie">Film</string>
+    <string name="big_image">Büyük Resim</string>
+    <string name="stars">Yıldızlar:</string>
+    <string name="director">Yönetmen:</string>
+    <string name="type">Tür:</string>
+    <string name="film">Film:</string>
+    <string name="time">Süre:</string>
+    <string name="years">Yıl:</string>
+    <string name="season">Sezon:</string>
+    <string name="subject">Konu</string>
+    <string name="author_comment">Yazar Yorumu</string>
 </resources>

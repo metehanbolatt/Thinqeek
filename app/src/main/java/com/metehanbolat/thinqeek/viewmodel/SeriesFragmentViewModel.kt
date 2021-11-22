@@ -27,7 +27,12 @@ class SeriesFragmentViewModel : ViewModel() {
                                 season = series["season"].toString().toInt(),
                                 downloadUrl = series["downloadUrl"].toString(),
                                 comment = series["comment"].toString(),
-                                date = series["date"].toString()
+                                date = series["date"].toString(),
+                                time = series["time"].toString(),
+                                stars = series["stars"].toString(),
+                                subject = series["subject"].toString(),
+                                type = series["type"].toString(),
+                                author = series["author"].toString()
                             )
                             seriesList.add(myMovie)
                         }

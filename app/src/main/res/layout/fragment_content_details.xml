@@ -53,7 +53,7 @@
             android:id="@+id/contentImage"
             android:layout_width="200dp"
             android:layout_height="380dp"
-            android:src="@drawable/dune"
+            android:transitionName="image_small"
             app:shapeAppearanceOverlay="@style/halfRightRoundedImageView"
             android:scaleType="centerCrop"/>
 
@@ -74,15 +74,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="11sp"
-                    android:text="Film:"
+                    android:text="@string/film"
                     android:textStyle="bold"
                     android:textColor="#FFD600" />
 
                 <TextView
+                    android:id="@+id/movieNameText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="11sp"
-                    android:text="Dune: Çöl Gezegeni"
                     android:layout_marginStart="10dp"
                     android:textColor="@color/white" />
             </LinearLayout>
@@ -97,15 +97,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="11sp"
-                    android:text="Yönetmen:"
+                    android:text="@string/type"
                     android:textStyle="bold"
                     android:textColor="#FFD600" />
 
                 <TextView
+                    android:id="@+id/movieType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="11sp"
-                    android:text="Metehan Bolat"
                     android:layout_marginStart="10dp"
                     android:textColor="@color/white" />
             </LinearLayout>
@@ -120,17 +120,39 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="11sp"
-                    android:text="Yıldızlar:"
+                    android:text="@string/director"
                     android:textStyle="bold"
                     android:textColor="#FFD600" />
+
+                <TextView
+                    android:id="@+id/movieDirector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="11sp"
-                    android:text="Metehan Bolat \nKutay Çetinkurt \nEmre Kara"
+                    android:text="@string/stars"
+                    android:textStyle="bold"
+                    android:textColor="#FFD600" />
+
+                <TextView
+                    android:id="@+id/movieStars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
                     android:lineSpacingExtra="2dp"
-                    android:justificationMode="inter_word"
                     android:layout_marginStart="10dp"
                     android:textColor="@color/white" />
             </LinearLayout>
@@ -145,15 +167,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="11sp"
-                    android:text="Süre:"
+                    android:text="@string/time"
                     android:textStyle="bold"
                     android:textColor="#FFD600" />
 
                 <TextView
+                    android:id="@+id/movieTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="11sp"
-                    android:text="2 saat 41 dakika"
                     android:layout_marginStart="10dp"
                     android:textColor="@color/white" />
             </LinearLayout>
@@ -168,15 +190,39 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="11sp"
-                    android:text="Yıl:"
+                    android:text="@string/years"
                     android:textStyle="bold"
                     android:textColor="#FFD600" />
+
+                <TextView
+                    android:id="@+id/movieYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/seasonLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="11sp"
-                    android:text="2021"
+                    android:text="@string/season"
+                    android:textStyle="bold"
+                    android:textColor="#FFD600" />
+
+                <TextView
+                    android:id="@+id/movieSeason"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
                     android:layout_marginStart="10dp"
                     android:textColor="@color/white" />
             </LinearLayout>
@@ -185,25 +231,39 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="11sp"
-                    android:text="Özet:"
+                    android:text="@string/subject"
                     android:textStyle="bold"
                     android:textColor="#FFD600" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="11sp"
-                    android:lineSpacingExtra="2dp"
-                    android:justificationMode="inter_word"
-                    android:text="Fasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfeature adaptation of Frank Herbert's science fiction novel, about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy."
-                    android:layout_marginStart="10dp"
-                    android:textColor="@color/white" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="#474747"/>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/movieSubject"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:lineSpacingExtra="2dp"
+                        android:justificationMode="inter_word"
+                        android:maxLines="6"
+                        android:textColor="@color/white" />
+
+                </ScrollView>
+
             </LinearLayout>
 
             <LinearLayout
@@ -257,7 +317,7 @@
         android:id="@+id/authorContentTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Yazar Yorumu"
+        android:text="@string/author_comment"
         android:textStyle="bold"
         android:textColor="#DD2C00"
         android:layout_marginTop="20dp"
@@ -296,7 +356,6 @@
             android:textStyle="bold"
             android:lineSpacingExtra="5dp"
             android:justificationMode="inter_word"
-            android:text="@string/lorem_ipsum"
             android:textColor="@color/white" />
     </ScrollView>
 
