@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -33,6 +34,7 @@ class ContentDetailsFragment : Fragment() {
     private var movieStars = ""
     private var movieTime = ""
     private var movieYear = ""
+    private var movieSeason = ""
     private var movieSubject = ""
     private var movieComment = ""
     private var movieDownloadUrl = ""
@@ -51,25 +53,31 @@ class ContentDetailsFragment : Fragment() {
         auth = Firebase.auth
         viewModel = ContentDetailsFragmentViewModel()
 
-        arguments?.let {
-            movieName = ContentDetailsFragmentArgs.fromBundle(it).name!!
-            movieComment = ContentDetailsFragmentArgs.fromBundle(it).comment!!
-            movieDownloadUrl = ContentDetailsFragmentArgs.fromBundle(it).downloadUrl!!
-            movieRate = ContentDetailsFragmentArgs.fromBundle(it).rate!!
-            movieType = ContentDetailsFragmentArgs.fromBundle(it).type!!
-            movieDirector = ContentDetailsFragmentArgs.fromBundle(it).director!!
-            movieStars = ContentDetailsFragmentArgs.fromBundle(it).stars!!
-            movieTime = ContentDetailsFragmentArgs.fromBundle(it).time!!
-            movieYear = ContentDetailsFragmentArgs.fromBundle(it).year!!
-            movieSubject = ContentDetailsFragmentArgs.fromBundle(it).subject!!
-            isMovie = ContentDetailsFragmentArgs.fromBundle(it).isMovie
-            author = ContentDetailsFragmentArgs.fromBundle(it).author!!
+        arguments?.let { bundle ->
+            movieName = ContentDetailsFragmentArgs.fromBundle(bundle).name!!
+            movieComment = ContentDetailsFragmentArgs.fromBundle(bundle).comment!!
+            movieDownloadUrl = ContentDetailsFragmentArgs.fromBundle(bundle).downloadUrl!!
+            movieRate = ContentDetailsFragmentArgs.fromBundle(bundle).rate!!
+            movieType = ContentDetailsFragmentArgs.fromBundle(bundle).type!!
+            movieDirector = ContentDetailsFragmentArgs.fromBundle(bundle).director!!
+            movieStars = ContentDetailsFragmentArgs.fromBundle(bundle).stars!!
+            movieTime = ContentDetailsFragmentArgs.fromBundle(bundle).time!!
+            movieYear = ContentDetailsFragmentArgs.fromBundle(bundle).year!!
+            movieSubject = ContentDetailsFragmentArgs.fromBundle(bundle).subject!!
+            isMovie = ContentDetailsFragmentArgs.fromBundle(bundle).isMovie
+            author = ContentDetailsFragmentArgs.fromBundle(bundle).author!!
+            movieSeason = ContentDetailsFragmentArgs.fromBundle(bundle).season!!
         }
 
         if (isMovie){
             binding.seasonLinear.visibility = View.GONE
+            binding.movieOrSeriesText.text = resources.getString(R.string.movie)
+            binding.movieOrSeriesText.setTextColor(ContextCompat.getColor(requireContext(), R.color.movieColor))
         }else{
             binding.seasonLinear.visibility = View.VISIBLE
+            binding.movieSeason.text = movieSeason
+            binding.movieOrSeriesText.text = resources.getString(R.string.series)
+            binding.movieOrSeriesText.setTextColor(ContextCompat.getColor(requireContext(), R.color.seriesColor))
         }
 
         return view
@@ -93,7 +101,7 @@ class ContentDetailsFragment : Fragment() {
 
         binding.contentImage.setOnClickListener {
             val extras = FragmentNavigatorExtras(binding.contentImage to "image_big")
-            val action = ContentDetailsFragmentDirections.actionDetailsMovieFragmentToBigMovieImageFragment(movieDownloadUrl)
+            val action = ContentDetailsFragmentDirections.actionDetailsMovieFragmentToBigMovieImageFragment(movieDownloadUrl, isMovie)
             findNavController().navigate(action,extras)
         }
 

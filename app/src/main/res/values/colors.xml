@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="orange">#FF6D00</color>
+    <color name="movieColor">#D50000</color>
+    <color name="seriesColor">#00C853</color>
 </resources>

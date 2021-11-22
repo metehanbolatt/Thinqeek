@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.metehanbolat.thinqeek.R
@@ -18,6 +19,7 @@ class BigImageFragment : Fragment() {
     private val binding get() = _binding!!
 
     private var downloadUrl = ""
+    private var isMovie = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,9 +30,17 @@ class BigImageFragment : Fragment() {
 
         arguments?.let {
             downloadUrl = BigImageFragmentArgs.fromBundle(it).downloadUrl!!
+            isMovie = BigImageFragmentArgs.fromBundle(it).isMovie
         }
 
         Picasso.get().load(downloadUrl).into(binding.bigMovieImage)
+        if (isMovie){
+            binding.seriesOrMovieText.text = resources.getString(R.string.movie)
+            binding.seriesOrMovieText.setTextColor(ContextCompat.getColor(requireContext(), R.color.movieColor))
+        }else{
+            binding.seriesOrMovieText.text = resources.getString(R.string.series)
+            binding.seriesOrMovieText.setTextColor(ContextCompat.getColor(requireContext(), R.color.seriesColor))
+        }
 
         return view
     }

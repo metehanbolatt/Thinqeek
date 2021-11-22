@@ -20,7 +20,7 @@ class SeriesFragmentViewModel : ViewModel() {
                         seriesList.clear()
                         for (series in seriesDoc){
                             val myMovie = Series(
-                                director = series["director"].toString(),
+                                director = series["producer"].toString(),
                                 name = series["name"].toString(),
                                 year = series["year"].toString().toInt(),
                                 rate = series["rate"].toString().toDouble(),

@@ -27,4 +27,6 @@
     <string name="season">Sezon:</string>
     <string name="subject">Konu</string>
     <string name="author_comment">Yazar:</string>
+    
+    <string name="recycler_season">(%1$d Sezon)</string>
 </resources>

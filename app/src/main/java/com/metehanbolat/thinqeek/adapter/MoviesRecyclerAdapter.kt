@@ -27,7 +27,7 @@ class MoviesRecyclerAdapter(var context: Context, var movieList: ArrayList<Movie
 
         holder.binding.movieRecyclerConstraint.setOnClickListener {
             if (viewModel.isClickable.value == true){
-                val action = MoviesFragmentDirections.actionMoviesFragmentToDetailsMovieFragment(
+                val action = MoviesFragmentDirections.actionMoviesFragmentToContentDetailsFragment(
                     isMovie = true,
                     director = movieList[position].director,
                     name = movieList[position].name,
@@ -35,7 +35,7 @@ class MoviesRecyclerAdapter(var context: Context, var movieList: ArrayList<Movie
                     downloadUrl = movieList[position].downloadUrl,
                     rate = movieList[position].rate.toString(),
                     year = movieList[position].year.toString(),
-                    season = null,
+                    season = "",
                     time = movieList[position].time,
                     stars = movieList[position].stars,
                     author = movieList[position].author,

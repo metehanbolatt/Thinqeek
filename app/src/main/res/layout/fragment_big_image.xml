@@ -28,13 +28,12 @@
             android:textStyle="bold"/>
 
         <TextView
+            android:id="@+id/seriesOrMovieText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/movie"
             android:layout_marginStart="3dp"
             android:textSize="20sp"
-            android:fontFamily="@font/days"
-            android:textColor="#D50000" />
+            android:fontFamily="@font/days" />
 
     </LinearLayout>
 
