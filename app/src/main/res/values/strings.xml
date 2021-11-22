@@ -14,16 +14,6 @@
     <string name="google_icon">Google Icon</string>
     <string name="star">yıldız</string>
 
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Vestibulum aliquet tincidunt tortor a bibendum.
-        Curabitur blandit arcu sit amet neque tincidunt, vel tempus magna ultrices.
-        Aenean metus enim, eleifend vel est et, placerat sollicitudin est.
-        Fusce arcu nulla, imperdiet ut ligula quis, sollicitudin feugiat dolor.
-        Curabitur at mauris et dui malesuada egestas eget quis diam.
-        Pellentesque varius justo quis nisi consectetur, vestibulum laoreet justo tristique.
-        Duis tincidunt sit amet elit ac porttitor. Nulla tristique in turpis et hendrerit.
-        Praesent et erat tincidunt, aliquam urna sit amet, fringilla massa.
-        Integer sit amet volutpat lacus. Maecenas quis finibus ex, et viverra diam.</string>
     <string name="user_comment_button">Kullanıcı Yorumu Butonu</string>
     <string name="movie">Film</string>
     <string name="series">Dizi</string>
@@ -36,5 +26,5 @@
     <string name="years">Yıl:</string>
     <string name="season">Sezon:</string>
     <string name="subject">Konu</string>
-    <string name="author_comment">Yazar Yorumu</string>
+    <string name="author_comment">Yazar:</string>
 </resources>

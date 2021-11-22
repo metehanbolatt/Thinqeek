@@ -313,17 +313,32 @@
         </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/authorContentTitle"
+    <LinearLayout
+        android:id="@+id/authorLinear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/author_comment"
-        android:textStyle="bold"
-        android:textColor="#DD2C00"
+        android:orientation="horizontal"
         android:layout_marginTop="20dp"
         android:layout_marginStart="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/contentLinear" />
+        app:layout_constraintTop_toBottomOf="@id/contentLinear">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/author_comment"
+            android:textStyle="bold"
+            android:textColor="#DD2C00" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:layout_marginStart="4dp"/>
+    </LinearLayout>
 
     <View
         android:layout_width="0dp"
@@ -332,16 +347,16 @@
         android:layout_marginEnd="12dp"
         app:layout_constraintBottom_toTopOf="@id/authorContentScroll"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/authorContentTitle"
-        app:layout_constraintTop_toBottomOf="@id/authorContentTitle" />
+        app:layout_constraintStart_toStartOf="@id/authorLinear"
+        app:layout_constraintTop_toBottomOf="@id/authorLinear" />
 
     <ScrollView
         android:id="@+id/authorContentScroll"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="@id/authorContentTitle"
-        app:layout_constraintTop_toBottomOf="@id/authorContentTitle"
+        app:layout_constraintStart_toStartOf="@id/authorLinear"
+        app:layout_constraintTop_toBottomOf="@id/authorLinear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/userCommentButton"
         android:layout_marginBottom="5dp"

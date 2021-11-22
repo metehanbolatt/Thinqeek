@@ -38,6 +38,7 @@ class ContentDetailsFragment : Fragment() {
     private var movieDownloadUrl = ""
     private var movieRate = ""
     private var isMovie = true
+    private var author = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,6 +63,7 @@ class ContentDetailsFragment : Fragment() {
             movieYear = ContentDetailsFragmentArgs.fromBundle(it).year!!
             movieSubject = ContentDetailsFragmentArgs.fromBundle(it).subject!!
             isMovie = ContentDetailsFragmentArgs.fromBundle(it).isMovie
+            author = ContentDetailsFragmentArgs.fromBundle(it).author!!
         }
 
         if (isMovie){
@@ -85,6 +87,7 @@ class ContentDetailsFragment : Fragment() {
         binding.movieSubject.text = movieSubject
         binding.detailsContentComment.text = movieComment
         Picasso.get().load(movieDownloadUrl).into(binding.contentImage)
+        binding.author.text = author
 
         starCount(movieRate.toDouble())
 
