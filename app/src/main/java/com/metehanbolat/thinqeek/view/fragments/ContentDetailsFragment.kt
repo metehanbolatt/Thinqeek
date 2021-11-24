@@ -23,7 +23,6 @@ class ContentDetailsFragment : Fragment() {
     private var _binding : FragmentContentDetailsBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
     private lateinit var viewModel: ContentDetailsFragmentViewModel
 
@@ -49,7 +48,6 @@ class ContentDetailsFragment : Fragment() {
         val view = binding.root
 
         firestore = Firebase.firestore
-        auth = Firebase.auth
         viewModel = ContentDetailsFragmentViewModel()
 
         arguments?.let { bundle ->

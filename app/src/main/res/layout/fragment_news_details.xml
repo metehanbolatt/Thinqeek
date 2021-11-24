@@ -57,7 +57,6 @@
         android:id="@+id/newsDetailsImage"
         android:layout_width="0dp"
         android:layout_height="300dp"
-        android:src="@drawable/dune"
         android:scaleType="centerCrop"
         android:contentDescription="@string/news_image"
         android:layout_marginTop="10dp"

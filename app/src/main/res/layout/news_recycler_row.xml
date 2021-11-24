@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/newsRecyclerConstraint"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,7 +10,6 @@
         android:id="@+id/newsTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Çip Krizinde neler yaşanıyor?"
         android:textSize="16sp"
         android:fontFamily="@font/gotham_bold"
         android:textColor="#FF6D00"
@@ -24,6 +24,7 @@
         android:layout_height="200dp"
         android:src="@drawable/dune"
         android:scaleType="centerCrop"
+        android:contentDescription="@string/news_image"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
@@ -49,7 +50,6 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:lineSpacingExtra="2dp"
-            android:text="asdfasdfasdfasd fasdfsad fasd fasdfasd fsad fasd fasdf asdfa sdfasd fasd fasdf asdfasdfsdafaa sdfas dfasd fasdfasdf sadfasdf asdfasdf asdf"
             android:fontFamily="@font/gotham_book"
             android:justificationMode="inter_word"
             android:maxLines="4" />

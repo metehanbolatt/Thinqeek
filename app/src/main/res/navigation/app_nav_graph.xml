@@ -111,5 +111,18 @@
         android:id="@+id/newsDetailsFragment"
         android:name="com.metehanbolat.thinqeek.view.fragments.NewsDetailsFragment"
         android:label="fragment_news_details"
-        tools:layout="@layout/fragment_news_details" />
+        tools:layout="@layout/fragment_news_details" >
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="description"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="downloadUrl"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>
