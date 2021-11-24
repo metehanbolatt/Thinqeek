@@ -65,7 +65,4 @@ dependencies {
 
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
-
-    implementation "com.facebook.shimmer:shimmer:0.1.0@aar"
-
 }
