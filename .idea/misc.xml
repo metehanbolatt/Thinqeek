@@ -14,10 +14,13 @@
         <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/layout/fragment_details_movie.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/layout/fragment_movies.xml" value="0.25" />
         <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/layout/fragment_news.xml" value="0.3171171171171171" />
-        <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/layout/fragment_series.xml" value="0.33" />
+        <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/layout/fragment_news_details.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/layout/fragment_series.xml" value="0.25" />
         <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/layout/fragment_technologies.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/layout/movies_recycler_row.xml" value="0.3171171171171171" />
-        <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/layout/series_recycler_row.xml" value="0.5" />
+        <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/layout/news_recycler_row.xml" value="0.25" />
+        <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/layout/series_recycler_row.xml" value="0.22" />
+        <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/layout/series_recycler_row_shimmer.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/layout/slide_item_container.xml" value="0.25" />
         <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/menu/bottom_nav_menu.xml" value="0.17747747747747747" />
         <entry key="..\:/Users/meteb/Desktop/Kotlin/Thinqeek/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19144144144144143" />

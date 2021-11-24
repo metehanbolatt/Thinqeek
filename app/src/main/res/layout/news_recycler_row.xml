@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/newsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Çip Krizinde neler yaşanıyor?"
+        android:textSize="16sp"
+        android:fontFamily="@font/gotham_bold"
+        android:textColor="#FF6D00"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/newsImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/dune"
+        android:scaleType="centerCrop"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/newsTitle"
+        app:layout_constraintEnd_toEndOf="@id/newsTitle"
+        app:layout_constraintTop_toBottomOf="@id/newsTitle"/>
+
+    <ScrollView
+        android:id="@+id/descriptionScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/newsTitle"
+        app:layout_constraintEnd_toEndOf="@id/newsTitle"
+        app:layout_constraintTop_toBottomOf="@id/newsImage">
+
+        <TextView
+            android:id="@+id/newsDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:lineSpacingExtra="2dp"
+            android:text="asdfasdfasdfasd fasdfsad fasd fasdfasd fsad fasd fasdf asdfa sdfasd fasd fasdf asdfasdfsdafaa sdfas dfasd fasdfasdf sadfasdf asdfasdf asdf"
+            android:fontFamily="@font/gotham_book"
+            android:justificationMode="inter_word"
+            android:maxLines="4" />
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#656565"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/descriptionScroll"
+        app:layout_constraintEnd_toEndOf="@id/descriptionScroll"
+        app:layout_constraintTop_toBottomOf="@id/descriptionScroll"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

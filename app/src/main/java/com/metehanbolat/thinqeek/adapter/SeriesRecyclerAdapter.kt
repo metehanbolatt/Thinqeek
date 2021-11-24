@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.metehanbolat.thinqeek.R
 import com.metehanbolat.thinqeek.databinding.SeriesRecyclerRowBinding
 import com.metehanbolat.thinqeek.model.Series
-import com.metehanbolat.thinqeek.view.fragments.MoviesFragmentDirections
 import com.metehanbolat.thinqeek.view.fragments.SeriesFragmentDirections
 import com.metehanbolat.thinqeek.viewmodel.SeriesFragmentViewModel
 import com.squareup.picasso.Picasso

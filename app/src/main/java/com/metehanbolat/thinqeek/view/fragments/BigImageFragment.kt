@@ -7,8 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.navigation.fragment.FragmentNavigatorExtras
-import androidx.navigation.fragment.findNavController
 import com.metehanbolat.thinqeek.R
 import com.metehanbolat.thinqeek.databinding.FragmentBigImageBinding
 import com.squareup.picasso.Picasso

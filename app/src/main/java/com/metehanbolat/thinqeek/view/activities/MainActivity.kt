@@ -88,6 +88,8 @@ class MainActivity : AppCompatActivity() {
             } else {
                 viewModel.isLoading.value = false
             }
+        }.addOnFailureListener {
+            viewModel.isLoading.value = false
         }
     }
 
@@ -109,7 +111,11 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(baseContext, exception.toString(), Toast.LENGTH_SHORT).show()
                         viewModel.isLoading.value = false
                     }
+                }else{
+                    viewModel.isLoading.value = false
                 }
+            }else{
+                viewModel.isLoading.value = false
             }
         }
     }
