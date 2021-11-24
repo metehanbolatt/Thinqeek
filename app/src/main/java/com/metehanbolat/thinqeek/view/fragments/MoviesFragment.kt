@@ -71,7 +71,7 @@ class MoviesFragment : Fragment() {
             }
         }
 
-        binding.chipRate.setOnCheckedChangeListener { compoundButton, b ->
+        binding.chipRate.setOnCheckedChangeListener { _, b ->
             if (b){
                 binding.chipYear.isChecked = false
                 viewModel.isClickable.value = false

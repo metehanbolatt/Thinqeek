@@ -21,7 +21,7 @@
         tools:layout="@layout/fragment_content_details" >
         <action
             android:id="@+id/action_detailsMovieFragment_to_bigMovieImageFragment"
-            app:destination="@id/bigMovieFragment" />
+            app:destination="@id/bigImageFragment" />
         <argument
             android:name="name"
             app:argType="string"
@@ -67,27 +67,27 @@
             app:argType="string"
             app:nullable="true" />
         <argument
-            android:name="isMovie"
-            app:argType="boolean"
-            android:defaultValue="true" />
+            android:name="isWhat"
+            app:argType="string"
+            app:nullable="true" />
         <argument
             android:name="type"
             app:argType="string"
             app:nullable="true" />
     </fragment>
     <fragment
-        android:id="@+id/bigMovieFragment"
+        android:id="@+id/bigImageFragment"
         android:name="com.metehanbolat.thinqeek.view.fragments.BigImageFragment"
-        android:label="fragment_big_movie_image"
-        tools:layout="@layout/fragment_big_image" >
+        android:label="fragment_big_image"
+        tools:layout="@layout/fragment_big_image">
         <argument
             android:name="downloadUrl"
             app:argType="string"
             app:nullable="true" />
         <argument
-            android:name="isMovie"
-            app:argType="boolean"
-            android:defaultValue="true" />
+            android:name="isWhat"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/seriesFragment"
@@ -124,5 +124,12 @@
             android:name="downloadUrl"
             app:argType="string"
             app:nullable="true" />
+        <argument
+            android:name="author"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_newsDetailsFragment_to_bigImageFragment"
+            app:destination="@id/bigImageFragment" />
     </fragment>
 </navigation>

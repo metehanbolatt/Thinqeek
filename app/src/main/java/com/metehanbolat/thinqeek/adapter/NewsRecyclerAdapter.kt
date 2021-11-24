@@ -29,7 +29,8 @@ class NewsRecyclerAdapter(var context : Context, var newsList : ArrayList<News>,
                 val action = NewsFragmentDirections.actionNewsFragmentToNewsDetailsFragment(
                     title = newsList[position].title,
                     description = newsList[position].description,
-                    downloadUrl = newsList[position].downloadUrl
+                    downloadUrl = newsList[position].downloadUrl,
+                    author = newsList[position].author
                 )
                 Navigation.findNavController(it).navigate(action)
             }

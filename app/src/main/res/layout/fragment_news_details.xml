@@ -58,6 +58,7 @@
         android:layout_width="0dp"
         android:layout_height="300dp"
         android:scaleType="centerCrop"
+        android:transitionName="image_small"
         android:contentDescription="@string/news_image"
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
@@ -81,7 +82,7 @@
             android:layout_height="wrap_content"
             android:text="@string/author_comment"
             android:textStyle="bold"
-            android:textColor="#DD2C00" />
+            android:textColor="#0091EA" />
 
         <TextView
             android:id="@+id/author"

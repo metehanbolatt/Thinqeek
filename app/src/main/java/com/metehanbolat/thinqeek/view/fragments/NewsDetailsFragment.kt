@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -37,6 +39,7 @@ class NewsDetailsFragment : Fragment() {
             newsTitle = NewsDetailsFragmentArgs.fromBundle(it).title!!
             newsDescription = NewsDetailsFragmentArgs.fromBundle(it).description!!
             newsImageUrl = NewsDetailsFragmentArgs.fromBundle(it).downloadUrl!!
+            author = NewsDetailsFragmentArgs.fromBundle(it).author!!
         }
 
         return view
@@ -48,7 +51,13 @@ class NewsDetailsFragment : Fragment() {
         binding.newsDetailsTitle.text = newsTitle
         binding.newsDetailsDescription.text = newsDescription
         Picasso.get().load(newsImageUrl).into(binding.newsDetailsImage)
-        binding.author.text = auth.currentUser!!.displayName
+        binding.author.text = author
+
+        binding.newsDetailsImage.setOnClickListener {
+            val extras = FragmentNavigatorExtras(binding.newsDetailsImage to "image_big")
+            val action = NewsDetailsFragmentDirections.actionNewsDetailsFragmentToBigImageFragment(newsImageUrl, "news")
+            findNavController().navigate(action,extras)
+        }
 
     }
 

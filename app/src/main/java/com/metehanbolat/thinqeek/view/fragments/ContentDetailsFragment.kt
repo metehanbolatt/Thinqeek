@@ -37,7 +37,7 @@ class ContentDetailsFragment : Fragment() {
     private var movieComment = ""
     private var movieDownloadUrl = ""
     private var movieRate = ""
-    private var isMovie = true
+    private var isWhat = ""
     private var author = ""
 
     override fun onCreateView(
@@ -61,20 +61,23 @@ class ContentDetailsFragment : Fragment() {
             movieTime = ContentDetailsFragmentArgs.fromBundle(bundle).time!!
             movieYear = ContentDetailsFragmentArgs.fromBundle(bundle).year!!
             movieSubject = ContentDetailsFragmentArgs.fromBundle(bundle).subject!!
-            isMovie = ContentDetailsFragmentArgs.fromBundle(bundle).isMovie
+            isWhat = ContentDetailsFragmentArgs.fromBundle(bundle).isWhat!!
             author = ContentDetailsFragmentArgs.fromBundle(bundle).author!!
             movieSeason = ContentDetailsFragmentArgs.fromBundle(bundle).season!!
         }
 
-        if (isMovie){
-            binding.seasonLinear.visibility = View.GONE
-            binding.movieOrSeriesText.text = resources.getString(R.string.movie)
-            binding.movieOrSeriesText.setTextColor(ContextCompat.getColor(requireContext(), R.color.movieColor))
-        }else{
-            binding.seasonLinear.visibility = View.VISIBLE
-            binding.movieSeason.text = movieSeason
-            binding.movieOrSeriesText.text = resources.getString(R.string.series)
-            binding.movieOrSeriesText.setTextColor(ContextCompat.getColor(requireContext(), R.color.seriesColor))
+        when(isWhat){
+            "movie" -> {
+                binding.seasonLinear.visibility = View.GONE
+                binding.movieOrSeriesText.text = resources.getString(R.string.movie)
+                binding.movieOrSeriesText.setTextColor(ContextCompat.getColor(requireContext(), R.color.movieColor))
+            }
+            "series" ->  {
+                binding.seasonLinear.visibility = View.VISIBLE
+                binding.movieSeason.text = movieSeason
+                binding.movieOrSeriesText.text = resources.getString(R.string.series)
+                binding.movieOrSeriesText.setTextColor(ContextCompat.getColor(requireContext(), R.color.seriesColor))
+            }
         }
 
         return view
@@ -98,7 +101,7 @@ class ContentDetailsFragment : Fragment() {
 
         binding.contentImage.setOnClickListener {
             val extras = FragmentNavigatorExtras(binding.contentImage to "image_big")
-            val action = ContentDetailsFragmentDirections.actionDetailsMovieFragmentToBigMovieImageFragment(movieDownloadUrl, isMovie)
+            val action = ContentDetailsFragmentDirections.actionDetailsMovieFragmentToBigMovieImageFragment(movieDownloadUrl, isWhat)
             findNavController().navigate(action,extras)
         }
 
