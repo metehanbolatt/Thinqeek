@@ -32,4 +32,6 @@
     <string name="news">Haber</string>
     <string name="news_image">Haber Resmi</string>
     <string name="user_comment">Yorum</string>
+    <string name="your_comment">Sizin yorumunuz...</string>
+    <string name="send_button">Send Button</string>
 </resources>

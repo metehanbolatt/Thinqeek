@@ -74,6 +74,9 @@
             android:name="type"
             app:argType="string"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_contentDetailsFragment_to_chatUserFragment"
+            app:destination="@id/chatUserFragment" />
     </fragment>
     <fragment
         android:id="@+id/bigImageFragment"
@@ -131,5 +134,22 @@
         <action
             android:id="@+id/action_newsDetailsFragment_to_bigImageFragment"
             app:destination="@id/bigImageFragment" />
+        <action
+            android:id="@+id/action_newsDetailsFragment_to_chatUserFragment"
+            app:destination="@id/chatUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatUserFragment"
+        android:name="com.metehanbolat.thinqeek.view.fragments.ChatUserFragment"
+        android:label="fragment_chat_user"
+        tools:layout="@layout/fragment_chat_user" >
+        <argument
+            android:name="isWhat"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="contentTitle"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 </navigation>
