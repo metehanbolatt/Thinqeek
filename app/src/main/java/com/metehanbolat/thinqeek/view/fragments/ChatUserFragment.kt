@@ -45,7 +45,7 @@ class ChatUserFragment : Fragment() {
         firestore = Firebase.firestore
         auth = Firebase.auth
         chatList = ArrayList()
-        chatAdapter = ChatUserRecyclerAdapter(chatList, viewModel)
+        chatAdapter = ChatUserRecyclerAdapter(requireContext(), chatList, viewModel)
 
         arguments?.let { bundle ->
             isWhat = ChatUserFragmentArgs.fromBundle(bundle).isWhat!!

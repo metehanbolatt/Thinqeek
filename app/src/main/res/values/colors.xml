@@ -12,4 +12,12 @@
     <color name="movieColor">#D50000</color>
     <color name="seriesColor">#00C853</color>
     <color name="newsColor">#00B8D4</color>
+
+    <color name="color_one">#FFAB00</color>
+    <color name="color_two">#C51162</color>
+    <color name="color_three">#0091EA</color>
+    <color name="color_four">#00C853</color>
+    <color name="color_five">#DD2C00</color>
+    <color name="color_six">#6200EA</color>
+    <color name="color_seven">#00BFA5</color>
 </resources>
