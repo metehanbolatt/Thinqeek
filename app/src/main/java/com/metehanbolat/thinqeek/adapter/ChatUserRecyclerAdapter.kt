@@ -16,7 +16,8 @@ class ChatUserRecyclerAdapter(var chatList : ArrayList<ChatUser>, var viewModel 
     }
 
     override fun onBindViewHolder(holder: ChatUserViewHolder, position: Int) {
-
+        holder.binding.userDisplayName.text = chatList[position].userDisplayName
+        holder.binding.userComment.text = chatList[position].comment
     }
 
     override fun getItemCount(): Int {

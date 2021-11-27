@@ -59,6 +59,11 @@ class NewsDetailsFragment : Fragment() {
             findNavController().navigate(action,extras)
         }
 
+        binding.userCommentButton.setOnClickListener {
+            val action = NewsDetailsFragmentDirections.actionNewsDetailsFragmentToChatUserFragment("Technologies", newsTitle)
+            findNavController().navigate(action)
+        }
+
     }
 
     override fun onDestroyView() {

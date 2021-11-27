@@ -41,7 +41,7 @@ class SeriesRecyclerAdapter(var context : Context, var seriesList : ArrayList<Se
                     stars = seriesList[position].stars,
                     author = seriesList[position].author,
                     subject = seriesList[position].subject,
-                    isWhat = "series",
+                    isWhat = "Series",
                     type = seriesList[position].type
                 )
                 Navigation.findNavController(it).navigate(action)

@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
@@ -12,6 +14,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.metehanbolat.thinqeek.R
 import com.metehanbolat.thinqeek.adapter.ChatUserRecyclerAdapter
 import com.metehanbolat.thinqeek.databinding.FragmentChatUserBinding
 import com.metehanbolat.thinqeek.model.ChatUser
@@ -55,6 +58,16 @@ class ChatUserFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.getUserComment(isWhat, contentTitle, firestore, chatList, chatAdapter)
+        binding.chatRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.chatRecyclerView.adapter = chatAdapter
+
+        when(isWhat){
+            "Movies" -> binding.movieOrSeriesText.setTextColor(ContextCompat.getColor(requireContext(), R.color.movieColor))
+            "Series" -> binding.movieOrSeriesText.setTextColor(ContextCompat.getColor(requireContext(), R.color.seriesColor))
+            "Technologies" -> binding.movieOrSeriesText.setTextColor(ContextCompat.getColor(requireContext(), R.color.newsColor))
+        }
+
         binding.sendButton.setOnClickListener { buttonView ->
             if (binding.userChatEditText.text.toString() != ""){
                 val comment = hashMapOf<String, Any>()
@@ -64,6 +77,7 @@ class ChatUserFragment : Fragment() {
 
                 firestore.collection(isWhat).document(contentTitle).collection("userComments").document(auth.currentUser!!.email.toString()).set(comment).addOnSuccessListener {
                     Snackbar.make(buttonView, "Yorumunuz başarıyla eklendi.", Snackbar.LENGTH_SHORT).show()
+                    binding.userChatEditText.setText("")
                 }.addOnFailureListener {
                     Snackbar.make(buttonView, "Bir sorun oluştu!", Snackbar.LENGTH_SHORT).show()
                 }

@@ -28,7 +28,7 @@ class MoviesRecyclerAdapter(var context: Context, var movieList: ArrayList<Movie
         holder.binding.movieRecyclerConstraint.setOnClickListener {
             if (viewModel.isClickable.value == true){
                 val action = MoviesFragmentDirections.actionMoviesFragmentToContentDetailsFragment(
-                    isWhat = "movie",
+                    isWhat = "Movies",
                     director = movieList[position].director,
                     name = movieList[position].name,
                     comment = movieList[position].comment,
