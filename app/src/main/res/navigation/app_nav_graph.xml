@@ -76,7 +76,11 @@
             app:nullable="true" />
         <action
             android:id="@+id/action_contentDetailsFragment_to_chatUserFragment"
-            app:destination="@id/chatUserFragment" />
+            app:destination="@id/chatUserFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/bigImageFragment"
@@ -136,7 +140,11 @@
             app:destination="@id/bigImageFragment" />
         <action
             android:id="@+id/action_newsDetailsFragment_to_chatUserFragment"
-            app:destination="@id/chatUserFragment" />
+            app:destination="@id/chatUserFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/chatUserFragment"
