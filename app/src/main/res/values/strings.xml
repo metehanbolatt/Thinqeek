@@ -31,4 +31,5 @@
     <string name="recycler_season">(%1$d Sezon)</string>
     <string name="news">Haber</string>
     <string name="news_image">Haber Resmi</string>
+    <string name="user_comment">Yorum</string>
 </resources>
