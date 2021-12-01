@@ -34,11 +34,11 @@ class BigImageFragment : Fragment() {
         Picasso.get().load(downloadUrl).into(binding.bigMovieImage)
 
         when(isWhat){
-            "movie" -> {
+            "Movies" -> {
                 binding.seriesOrMovieText.text = resources.getString(R.string.movie)
                 binding.seriesOrMovieText.setTextColor(ContextCompat.getColor(requireContext(), R.color.movieColor))
             }
-            "series" ->  {
+            "Series" ->  {
                 binding.seriesOrMovieText.text = resources.getString(R.string.series)
                 binding.seriesOrMovieText.setTextColor(ContextCompat.getColor(requireContext(), R.color.seriesColor))
             }
