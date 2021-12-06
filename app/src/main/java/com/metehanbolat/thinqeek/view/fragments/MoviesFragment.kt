@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -29,6 +30,9 @@ class MoviesFragment : Fragment() {
     private lateinit var movieList: ArrayList<Movies>
     private lateinit var movieAdapter: MoviesRecyclerAdapter
 
+    private lateinit var userName : String
+    private lateinit var userEmail : String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,6 +45,11 @@ class MoviesFragment : Fragment() {
         auth = Firebase.auth
         movieList = ArrayList()
         movieAdapter = MoviesRecyclerAdapter(requireContext(), movieList, viewModel)
+
+        if (auth.currentUser != null){
+            userName = auth.currentUser!!.displayName.toString()
+            userEmail = auth.currentUser!!.email.toString()
+        }
 
         return view
     }
@@ -80,6 +89,11 @@ class MoviesFragment : Fragment() {
                 viewModel.isClickable.value = false
                 viewModel.getFilm("date", firestore, movieList, movieAdapter)
             }
+        }
+
+        binding.profileImage.setOnClickListener {
+            val action = MoviesFragmentDirections.actionMoviesFragmentToProfileFragment(userName, userEmail)
+            findNavController().navigate(action)
         }
     }
 

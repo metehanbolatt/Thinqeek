@@ -6,12 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.metehanbolat.thinqeek.R
 import com.metehanbolat.thinqeek.adapter.SeriesRecyclerAdapter
 import com.metehanbolat.thinqeek.databinding.FragmentSeriesBinding
 import com.metehanbolat.thinqeek.model.Series
@@ -29,6 +31,9 @@ class SeriesFragment : Fragment() {
     private lateinit var seriesList: ArrayList<Series>
     private lateinit var seriesAdapter: SeriesRecyclerAdapter
 
+    private lateinit var userName : String
+    private lateinit var userEmail : String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,6 +46,11 @@ class SeriesFragment : Fragment() {
         auth = Firebase.auth
         seriesList = ArrayList()
         seriesAdapter = SeriesRecyclerAdapter(requireContext(), seriesList, viewModel)
+
+        if (auth.currentUser != null){
+            userName = auth.currentUser!!.displayName.toString()
+            userEmail = auth.currentUser!!.email.toString()
+        }
 
         return view
     }
@@ -80,6 +90,11 @@ class SeriesFragment : Fragment() {
                 viewModel.isClickable.value = false
                 viewModel.getSeries("date", firestore, seriesList, seriesAdapter)
             }
+        }
+
+        binding.profileImage.setOnClickListener {
+            val action = SeriesFragmentDirections.actionSeriesFragmentToProfileFragment(userName, userEmail)
+            findNavController().navigate(action)
         }
     }
 

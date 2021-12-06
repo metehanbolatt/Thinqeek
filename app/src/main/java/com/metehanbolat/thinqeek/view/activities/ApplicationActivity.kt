@@ -3,6 +3,9 @@ package com.metehanbolat.thinqeek.view.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -11,6 +14,9 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.metehanbolat.thinqeek.R
 import com.metehanbolat.thinqeek.databinding.ActivityApplicationBinding
+import com.metehanbolat.thinqeek.view.fragments.MoviesFragment
+import com.metehanbolat.thinqeek.view.fragments.NewsFragment
+import com.metehanbolat.thinqeek.view.fragments.SeriesFragment
 
 class ApplicationActivity : AppCompatActivity() {
 
@@ -22,14 +28,7 @@ class ApplicationActivity : AppCompatActivity() {
         binding = ActivityApplicationBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
         auth = Firebase.auth
-
-        val currentUser = auth.currentUser
-
-        println(currentUser?.uid)
-        println(currentUser?.displayName)
-        println(currentUser?.email)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController : NavController = navHostFragment.navController
@@ -46,7 +45,5 @@ class ApplicationActivity : AppCompatActivity() {
                 binding.bottomNavigation.visibility = View.VISIBLE
             }
         }
-
-
     }
 }

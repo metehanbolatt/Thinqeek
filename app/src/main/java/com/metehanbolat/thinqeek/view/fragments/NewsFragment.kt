@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.firebase.auth.FirebaseAuth
@@ -34,6 +35,9 @@ class NewsFragment : Fragment() {
     private lateinit var newsList: ArrayList<News>
     private lateinit var newsAdapter: NewsRecyclerAdapter
 
+    private lateinit var userName : String
+    private lateinit var userEmail : String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,6 +50,11 @@ class NewsFragment : Fragment() {
         auth = Firebase.auth
         newsList = ArrayList()
         newsAdapter = NewsRecyclerAdapter(requireContext(), newsList, viewModel)
+
+        if (auth.currentUser != null){
+            userName = auth.currentUser!!.displayName.toString()
+            userEmail = auth.currentUser!!.email.toString()
+        }
 
         return view
     }
@@ -62,6 +71,11 @@ class NewsFragment : Fragment() {
             startActivity(intent)
             activity?.finish()
             auth.signOut()
+        }
+
+        binding.profileImage.setOnClickListener {
+            val action = NewsFragmentDirections.actionNewsFragmentToProfileFragment(userName, userEmail)
+            findNavController().navigate(action)
         }
     }
 

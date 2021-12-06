@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_moviesFragment_to_contentDetailsFragment"
             app:destination="@id/contentDetailsFragment" />
+        <action
+            android:id="@+id/action_moviesFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/contentDetailsFragment"
@@ -104,6 +107,9 @@
         <action
             android:id="@+id/action_seriesFragment_to_contentDetailsFragment"
             app:destination="@id/contentDetailsFragment" />
+        <action
+            android:id="@+id/action_seriesFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/newsFragment"
@@ -113,6 +119,9 @@
         <action
             android:id="@+id/action_newsFragment_to_newsDetailsFragment"
             app:destination="@id/newsDetailsFragment" />
+        <action
+            android:id="@+id/action_newsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/newsDetailsFragment"
@@ -159,5 +168,17 @@
             android:name="contentTitle"
             app:argType="string"
             app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.metehanbolat.thinqeek.view.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <argument
+            android:name="userName"
+            app:argType="string" />
+        <argument
+            android:name="userEmail"
+            app:argType="string" />
     </fragment>
 </navigation>
